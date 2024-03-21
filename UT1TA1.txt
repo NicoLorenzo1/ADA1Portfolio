@@ -1,0 +1,11 @@
+Modelo en cascada
+
+Es un modelo que en el desarrollo el software se somete a fases continuas las cuales estan enlazadas y dependen de la fase anterior, a partir de eso podemos determinar que en el transcurso del desarrollo, al pasar por las diferentes fases se consigue un recorrido secuencial.
+
+Ventajas:
+
+Es un modelo eficaz, estructurado y simple al momento de aplicarlo
+
+Desventajas:
+
+No es adecuado para requisitos donde es probable que cambien ya que una vez avanzó el proyecto no permite manejar bien las modificaciones y hace que las modificaciones se vuelvan pesadas y costosas.

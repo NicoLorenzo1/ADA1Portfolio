@@ -1,0 +1,21 @@
+Requisitos:
+
+1-No es smart ya que lo que se pide no es especifico.
+
+2-Es smart ya que es medible, no tiene ambiguedades, es especifico y es relevante.
+
+3-No es smart porque no es especifico ya que no se especifican que navegadores se desean usar y a que se refiere con "compatible".
+
+4-Es smart ya que cumple con todas las cualidades además de ser medible.
+
+5-No es smart, no se especifica que son "grandes volumenes de datos".
+
+6-No es smart, en este caso es relevante pero no es alcanzable ni medible.
+
+7-Es smart ya que es especifico y claro el requisito.
+
+8-Es smart, ya que es alcanzable medible, relevante y especifico.
+
+9-No es smart debido a que no es especifico, es muy amplio el requisito
+
+10-Es smart ya que cumple con los requisitos, no sabemos si es alcanzable debido a que desconocemos el funcionamiento de las normas, pero en principio, es alcanzable relevante y especifico.
