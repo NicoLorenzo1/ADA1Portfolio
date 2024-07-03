@@ -1,0 +1,681 @@
+using uy.edu.ucu.andis1;
+
+EJERCICIO1
+public class ShippingCalculator
+{
+    public enum ShippingType
+    {
+        Ground,
+        Air,
+        Sea,
+        .....
+
+}
+    public double CalculateShippingCost(double weight, ShippingType type)
+    {
+        double cost = 0;
+        switch (type)
+        {
+            case ShippingType.Ground:
+                cost = weight * 1.5;
+                break;
+            case ShippingType.Air:
+                cost = weight * 2.5;
+                break;
+            case ShippingType.Sea:
+                cost = weight * 1.2;
+                break;
+            case ...:
+                cost = weight *
+
+                break;
+
+        }
+        return cost;
+    }
+}
+
+//=============================================================================================================================================
+public class ShippingCalculator
+{
+    public enum StrategyType
+    {
+        Ground,
+        Air,
+        Sea,
+        uber,
+        globo
+        .....
+    }
+
+    public double Calculate(StrategyType type, double weight)
+    {
+        switch (type)
+        {
+            case StrategyType.Ground:
+                return GroundStrategy.CalculateShippingCost(weight)
+                break;
+            case StrategyType.uber:
+                return uberStrategy.CalculateShippingCost(weight)
+                break;
+            case StrategyType.globo:
+                return globoStrategy.CalculateShippingCost(weight)
+                break;
+            case ...:
+                reurn....
+
+                break;
+        }
+        return cost;
+    }
+
+}
+
+IStrategy Istrategy
+{
+    public static double CalculateShippingCost(weight);
+}
+
+
+public class GroundStrategy implements IStrategy
+{
+    CalculateShippingCost(weight){
+        return weight * 20;
+    }
+}
+
+public class uberStrategy implements IStrategy
+{
+    CalculateShippingCost(weight){
+        return weight * 10;
+    }
+}
+
+public class globoStrategy implements IStrategy
+{
+    CalculateShippingCost(weight){
+        return weight * 30;
+    }
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Ejercicio2
+
+
+namespace uy.edu.ucu.andis1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Do you want coffee? (yes/no):");
+            string coffee = Console.ReadLine();
+            Console.WriteLine("Do you want milk? (yes/no):");
+            string milk = Console.ReadLine();
+            Console.WriteLine("Do you want sugar? (yes/no):");
+            string sugar = Console.ReadLine();
+            double cost = 0;
+            if (coffee == "yes")
+            {
+                cost += 1.0;
+            }
+            if (milk == "yes")
+            {
+                cost += 0.5;
+            }
+            if (sugar == "yes")
+            {
+                cost += 0.2;
+            }
+            Console.WriteLine("Total cost: $" + cost);
+        }
+    }
+}
+//=============================================================================================================================================
+
+IBebida
+{
+    public double getCost();
+}
+
+public class Coffee implements IBebida
+{
+    public double getCost()
+{
+    return 1.25;
+}
+}
+
+public class CoffeeDecorator implements IBebida  //decorador principal donde heredan los otros decoradores 
+{
+    public double getCost();
+}
+
+public class SugarDecorator implements CoffeeDecorator
+{
+    public SugarDecorator(Coffee coffee) { }
+
+public double getCost()
+{
+    return coffee.getCost() + 0.5;
+}
+}
+
+public class MilkDecorator implements CoffeeDecorator
+{
+    public MilkDecorator(Coffee coffee) { }
+
+public double getCost()
+{
+    return coffee.getCost() + 0.8;
+}
+}
+
+ class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Do you want coffee? (yes/no):");
+        string coffee = Console.ReadLine();
+        Console.WriteLine("Do you want milk? (yes/no):");
+        string milk = Console.ReadLine();
+        Console.WriteLine("Do you want sugar? (yes/no):");
+        string sugar = Console.ReadLine();
+        double cost = 0;
+        if (coffee == "yes")
+        {
+            Coffee newCoffee = new Coffee();
+        }
+        if (milk == "yes")
+        {
+            newCoffee = new MilkDecorator(newCoffee);
+        }
+        if (sugar == "yes")
+        {
+            newCoffee = new SugarDecorator(newCoffee);
+        }
+        Console.WriteLine("Total cost: $" + newCoffee.getCost());
+
+
+    }
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+EJERCICIO 3
+
+namespace uy.edu.ucu.andis1
+{
+    public class Libro
+    {
+        String nombre = "Libro";
+        public string ObtenerNombre()
+        {
+            return nombre;
+        }
+        public decimal CalcularPrecio()
+        {
+            return 10.0;
+        }
+    }
+    public class Ropa
+    {
+        String nombre = "Ropa";
+        public string ObtenerNombre()
+        {
+            return nombre;
+        }
+        public decimal CalcularPrecio()
+        {
+            return 20.0;
+        }
+    }
+    public class Electronico
+    {
+        String nombre = "Electrónico";
+        public string ObtenerNombre()
+        {
+            return nombre;
+        }
+        public decimal CalcularPrecio()
+        {
+            return 30.0;
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Libro libro = new Libro();
+            Ropa ropa = new Ropa();
+            Electronico electronico = new Electronico();
+            Console.WriteLine(libro.ObtenerNombre() + ": $" +
+            libro.CalcularPrecio());
+            Console.WriteLine(ropa.ObtenerNombre() + ": $" +
+            ropa.CalcularPrecio());
+            Console.WriteLine(electronico.ObtenerNombre() + ": $" +
+            electronico.CalcularPrecio());
+        }
+    }
+}
+
+//========================================================================================================================================
+
+
+public Creator
+{
+    public IProduct CreateProduct()
+    {
+
+    }
+}
+
+public interface IProduct
+{
+    public string ObtenerNombre();
+    public double CalcularPrecio();
+}
+
+public class LibroCreator : Creator
+{
+    @Override
+    public override IProduct CreateProduct(nombre, precio)
+    {
+        return new ProductoLibro(nombre, precio)
+    }
+}
+
+public class RopaCreator : Creator
+{
+    @Override
+    public override IProduct CreateProduct(nombre, precio)
+    {
+        return new ProductoRopa(nombre, precio)
+    }
+}
+
+public class ElectronicoCreator : Creator
+{
+    @Override
+    public override IProduct CreateProduct(nombre, precio)
+    {
+        return new ProductoElectronico(nombre, precio)
+    }
+}
+
+public class ProductoLibro implements IProduct
+{
+    public ProductoLibro(string nombre, int precio)
+{
+    this.nombre = nombre;
+    this.precio = precio
+    }
+
+public string ObtenerNombre()
+{
+    return this.nombre;
+}
+
+public int ObtenerPrecio()
+{
+    return this.precio;
+}
+}
+
+public class ProductoRopa implements IProduct
+{
+    public ProductoRopa(string nombre, int precio)
+{
+    this.nombre = nombre;
+    this.precio = precio
+    }
+
+public string ObtenerNombre()
+{
+    return this.nombre;
+}
+
+public int ObtenerPrecio()
+{
+    return this.precio;
+}
+}
+
+public class ProductoElectronico implements IProduct
+{
+    public ProductoElectronico(string nombre, int precio)
+{
+    this.nombre = nombre;
+    this.precio = precio
+    }
+
+public string ObtenerNombre()
+{
+    return this.nombre;
+}
+
+public int ObtenerPrecio()
+{
+    return this.precio;
+}
+}
+
+class Program
+{
+    static void Main()
+    {
+        Creator creator = new Creator();
+        IProduct Libro = creator.LibroCreator("libro1", 100);
+        Libro.ObtenerNombre();
+        Libro.CalcularPrecio();
+    }
+}
+
+//#############################################################################################################################################
+//#############################################################################################################################################
+//#############################################################################################################################################
+//#############################################################################################################################################
+
+PARCIAL2
+
+EJERCICIO1
+
+{
+ static void Main(string[] args)
+{
+    var employeeManager = new EmployeeManager();
+    employeeManager.AddEmployee(new Employee
+    {
+        Name = "Lala",
+        HoursWorked = 40,
+        HourlyRate = 25
+    });
+    employeeManager.AddEmployee(new Employee
+    {
+        Name = "Pepe",
+        HoursWorked = 50,
+        HourlyRate = 20
+    });
+    Console.WriteLine("Total Payroll: $" +
+    employeeManager.CalculateTotalPayroll());
+    // Comentario: 2023-07-05; Para qué está esto? No sé,
+    pero no lo saco por si algo se rompe...
+employeeManager.OldPayrollSystem();
+    employeeManager.OtherPayrollCalculation();
+    employeeManager.AddEmployee(new Employee
+    {
+        Name = "Boss",
+        HoursWorked = 5,
+        HourlyRate = 200
+    });
+}
+}
+public class Employee
+{
+}
+public string Name { get; set; }
+public int HoursWorked { get; set; }
+public double HourlyRate { get; set; }
+public class EmployeeManager
+{
+    private List<Employee> employees = new List<Employee>();
+    private List<int> oldPayrollSystemData = new List<int>(); // ¿Qué
+    public void AddEmployee(Employee employee)
+    {
+    }
+    employees.Add(employee);
+  public double CalculateTotalPayroll()
+    {
+        double total = 0;
+        foreach (var employee in employees)
+        {
+        }
+        total += employee.HoursWorked * employee.HourlyRate;
+        return total;
+    }
+    // Comentario: 2023-07-05;
+    // Esto parece ser parte de un viejo sistema de nómina que ya
+    no se usa.
+// Pero está aquí, y no estamos seguros de si es seguro eliminarlo.
+public void OldPayrollSystem()
+    {
+        ...
+Console.WriteLine("Old payroll system processed.");
+    }
+    // Comentario: 2023-07-05;
+    // Esto parece ser parte de un viejo sistema de nómina que ya
+    no se usa.
+// Pero está aquí, y no estamos seguros de si es seguro eliminarlo.
+public void OtherPayrollCalculation()
+    {
+        ...
+Console.WriteLine("Old payroll system processed.");
+    }
+}
+
+//========================================================================================================================================
+
+{
+    static void Main(string[] args)
+    {
+        var employeeManager = new EmployeeManager();
+        employeeManager.AddEmployee(new Employee
+        {
+            Name = "Lala",
+            HoursWorked = 40,
+            HourlyRate = 25
+        });
+        employeeManager.AddEmployee(new Employee
+        {
+            Name = "Pepe",
+            HoursWorked = 50,
+            HourlyRate = 20
+        });
+        //En la lista se debe agregar a las personas que quieras calcular el sueldo.
+        Console.WriteLine("Total Payroll: $" +
+        employeeManager.SelectStrategy("calculateTotalPayroll")); // se pasa la estrategia de como se quiere calcular en este caso todos los sueldos, pero se puede solo empleados o jefes
+    }
+}
+public class Employee
+{
+    public string Name { get; set; }
+    public int HoursWorked { get; set; }
+    public double HourlyRate { get; set; }
+}
+public class EmployeeManager
+{
+    private List<Employee> employees = new List<Employee>();
+    public void AddEmployee(Employee employee)
+    {
+        employees.Add(employee);
+    }
+    public double SelectStrategy(string strategyType)
+    {
+        switch (strategyType)
+        {
+            case "empleadoStrategy":
+                return EmpleadoStrategy.CalculatePayroll(employees);
+            case "JefeStrategy":
+                return JefeStrategy.CalculatePayroll(employees);+
+            case 'calculateTotalPayroll':
+                return CalculateTotalPayrollStrategy.CalculatePayroll(employees);
+            case ...:
+                return ....
+        }
+        return cost;
+    }
+}
+
+IStrategy
+{
+    public double CalculatePayroll(list empleados);
+}
+
+public class EmpleadoStrategy implements IStrategy
+{
+    public double CalculatePayroll(list empleados) //Al manejar lista de empleados podes manejar lista de un empleado o de varios
+{
+    //estrategia de sueldo del empleado
+    return
+    }
+}
+
+public class JefeStrategy implements IStrategy
+{
+    public double CalculatePayroll(list empleados) //Al manejar lista de empleados podes manejar lista de un empleado o de varios
+{
+
+    //estrategia de sueldo del jefe 
+    return
+    }
+}
+
+
+public class CalculateTotalPayrollStrategy implements IStrategy
+{
+    public double CalculatePayroll(list empleados) //Al manejar lista de empleados podes manejar lista de un empleado o de varios
+{
+    double total = 0;
+    foreach (var employee in employees)
+    {
+    }
+    total += employee.HoursWorked * employee.HourlyRate;
+    return total;
+}
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Ejercicio2
+
+public class UserProfile
+public string Name { get; set; }
+public int Age { get; set; }
+public UserProfile(string name, int age)
+{
+    Name = name;
+    Age = age;
+}
+
+public void PrintProfile() 
+{
+Console.WriteLine($"Name: {Name}, Age: {Age}"); 
+}
+
+class Program
+static void Main()
+{
+    UserProfile profile = new UserProfile("Alice", 25);
+    Console.WriteLine("Original Profile:");
+    profile.PrintProfile();
+    Console.WriteLine("\nUpdated Profile:");
+    profile.Name = "Bob";
+    profile.Age = 30;
+    profile.PrintProfile();
+    Console.WriteLine("\nUPS!!!:");
+    profile.Name = "Alice";
+    profile.Age = 25;
+    profile.PrintProfile();
+}
+//========================================================================================================================================
+
+public class UserProfile
+public string Name { get; set; }
+public int Age { get; set; }
+public UserProfile(string name, int age)
+{
+    Name = name;
+    Age = age;
+}
+
+public void PrintProfile() 
+{
+Console.WriteLine($"Name: {Name}, Age: {Age}"); 
+}
+
+class Program
+static void Main()
+{
+    Originator originator = new Originator();
+    CareTaker careTaker = new CareTaker();
+
+    UserProfile profile = new UserProfile("Alice", 25);
+    Console.WriteLine("Original Profile:");
+    profile.PrintProfile();
+
+    originator.setState(profile);
+    careTaker.addMemento(originator.save()) //el save devuelve una instancia nueva de memento con el state de profile
+
+
+    Console.WriteLine("\nUpdated Profile:");
+    profile.Name = "Bob";
+    profile.Age = 30;
+    profile.PrintProfile();
+
+    originator.setState(profile);
+    careTaker.addMemento(originator.save()) //el save devuelve una instancia nueva de memento con el state de profile
+
+    Console.WriteLine("\nUPS!!!:");
+    originator.restore(careTaker.getMemento(0))
+    //profile.Name = "Alice";
+    //profile.Age = 25;
+    profile.PrintProfile();
+}
+
+public class Originator // es el que efectua las acciones que realzia el usuario 
+{
+    public UserProfile state
+
+
+    public void setState(UserProfile state)
+    {
+        this.state = state;
+    }
+
+    public void getState()
+    {
+        return this.state;
+    }
+
+    public void save() //retorna una nueva instancia de memento con el estado
+    {
+        return new Memento(this.state)
+    }
+
+    public void restore(Memento m)
+    {
+        this.state = m.getState();
+    }
+}
+
+public class Memento 
+{
+    public UserProfile state
+
+    public void Memento(UserProfile state)
+    {
+        this.state = state
+    }
+
+    public void getState()
+    {
+        return this.state;
+    }
+}
+
+public class CareTaker //es quien se encarga de almacenar y traer las copias (estados)
+{
+    list<Memento> history = new list<Memento>();
+
+    public void addMemento(Memento newMemento)
+    {
+        history.add(newMemento);
+    }
+
+    public void getMemento(int index)
+    {
+        return mementos.get(index);
+    }
+}

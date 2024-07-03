@@ -1,0 +1,139 @@
+{
+  static void Main(string[] args)
+  {
+    var employeeManager = new EmployeeManager();
+
+
+     var strategy1 = new strategy1();
+2
+
+
+    employeeManager.AddEmployee(new Employee
+    {
+      Name = "Lala",
+      HoursWorked = 40,
+      HourlyRate = 25
+    });
+    employeeManager.AddEmployee(new Employee
+    {
+      Name = "Pepe",
+      HoursWorked = 50,
+      HourlyRate = 20
+    });
+    Console.WriteLine("Total Payroll: $" +
+    employeeManager.CalculateTotalPayroll());
+
+    // Comentario: 2023-07-05; Para qué está esto? No sé,
+    //pero no lo saco por si algo se rompe...
+    //employeeManager.OldPayrollSystem(); --------------------------------------------------------------------------------------------------ELIMINADO
+    //employeeManager.OtherPayrollCalculation(); --------------------------------------------------------------------------------------------------ELIMINADO
+    employeeManager.AddEmployee(new Employee
+    {
+      Name = "Boss",
+      HoursWorked = 5,
+      HourlyRate = 200
+    });
+  }
+}
+public class Employee
+{
+}
+public string Name { get; set; }
+x
+ public int HoursWorked { get; set; }
+public double HourlyRate { get; set; }
+1
+
+public class EmployeeManager
+{
+  es esto?
+private List<int> oldPayrollSystemData = new List<int>(); // ¿Qué
+  public void AddEmployee(Employee employee)
+  {
+  }
+  employees.Add(employee);
+  public double CalculateTotalPayroll()
+  {
+    double total = 0;
+    foreach (var employee in employees)
+    {
+    }
+    total += employee.HoursWorked * employee.HourlyRate;
+    return total;
+  }
+
+  /*------------------------------------------------------------------------------------------------------- eliminado
+  // Comentario: 2023-07-05;
+  // Esto parece ser parte de un viejo sistema de nómina que ya
+  no se usa.
+// Pero está aquí, y no estamos seguros de si es seguro eliminarlo.
+public void OldPayrollSystem()
+  {
+    ...
+Console.WriteLine("Old payroll system processed.");
+  }
+  // Comentario: 2023-07-05;
+  // Esto parece ser parte de un viejo sistema de nómina que ya
+  no se usa.
+// Pero está aquí, y no estamos seguros de si es seguro eliminarlo.
+public void OtherPayrollCalculation()
+  {
+    ...
+Console.WriteLine("Old payroll system processed.");
+  }
+
+    */------------------------------------------------------------------------------------------------------- eliminado
+}
+
+iNTERFAZ NUEVA ISTRATEGY 
+
+metodo calcularPago()
+
+CLASE NUEVA calcularpago1() : IStrategy
+
+implementa metodo calcularPago()
+//logica del metodo
+
+
+
+antiPatron identificado lavaflow 
+
+patron utilizado strategy
+
+Crear una interfaz IStrategy con la firma calcularpago()
+
+crear una clase CalcularPago1 que va a implementar la interfaz y la clase va a tener el metodo calcularPago()
+
+Luego en program se crea una instancia de la estrategia que queres utilizar (calcular pago1 o la clase que quieras)
+
+En el program se hace calcularPago1.calcularPago() (suponiengo que calcualrPago1 es la instancia que cree anteriormente)
+
+
+
+
+//=====================================================================================================================================================================================
+
+EJERCICIO2
+
+Mememnto con prototype 
+
+
+
+puesta a punto 
+
+1- lavaFlow antipatron 
+    strategy 
+
+2-Memento y prototype combinacion (en el memento se clona el objeto y usa prototype)
+
+
+3- -Observer solo con adapter o solo con decorator 
+
+    -solo interfaces 
+
+    -solo observer (solucion)
+
+4- si se quiere usar uno o otro entonces strategy (pero la solucion no lo dice)
+
+- ejemplo de xml y se quiere usar otro con json (diapos)
+-Adapter 
